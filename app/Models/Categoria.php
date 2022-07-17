@@ -10,7 +10,7 @@ class Categoria extends Model
     protected $fillable = [
         'grauAcademico', 
         'escalao', 
-        'nivel'
+        'nivel',
     ];
 
     // public function categoria(){

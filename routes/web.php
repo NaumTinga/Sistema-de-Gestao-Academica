@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CursoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 
@@ -32,6 +33,7 @@ Route::resource('docentes', 'App\Http\Controllers\DocenteController');
 Route::resource('disciplinas', 'App\Http\Controllers\DisciplinaController');
 // Curso
 Route::resource('cursos', 'App\Http\Controllers\CursoController');
+Route::get('cursos/{curso}/{disciplina}',[CursoController::class, 'removerDisciplina'])->name('curso.removerDisciplina');
 // Adenda
 Route::resource('adendas', 'App\Http\Controllers\AdendaController');
 // Categoria

@@ -326,6 +326,19 @@ return [
                 ],
             ],
         ],
+        [
+            'text' => 'Categorias',
+            'submenu' => [
+                [
+                    'text' => 'Todas Categorias',
+                    'url'  => 'categorias'
+                ],
+                [
+                    'text'  => 'Registar Categoria',
+                    'url'   => 'categorias/create'
+                ],
+            ],
+        ],
 
         // ['header' => 'account_settings'],
         // [

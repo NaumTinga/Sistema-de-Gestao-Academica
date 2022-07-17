@@ -70,9 +70,10 @@ class DisciplinaController extends Controller
 
     public function destroy(Disciplina $disciplina)
     {
+        $disciplina->cursos()->sync([]);
         $disciplina->delete();
         return redirect()
-        ->route('disciplinas.index')
-        ->withSuccess("A disciplina {$disciplina->nome} foi removida");
+            ->route('disciplinas.index')
+            ->withSuccess("A disciplina {$disciplina->nome} foi removida");
     }
 }

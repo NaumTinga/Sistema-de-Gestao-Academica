@@ -36,13 +36,15 @@ class CursoController extends Controller
 
     public function create()
     {
-
-        return view('Cursos.create');
+        $disciplinas = Disciplina::all();
+        return view('Cursos.create')->with([
+            'disciplinas' => $disciplinas,
+        ]);
     }
 
     public function store()
     {
-       //opcao 2 $curso = Curso::create(['name' => request()->name]);
+        //opcao 2 $curso = Curso::create(['name' => request()->name]);
 
         $curso = Curso::create(request()->all());
         $disciplinas = Disciplina::find(request()->disciplinas);
@@ -78,18 +80,35 @@ class CursoController extends Controller
     {
 
         $curso = Curso::findOrFail($curso);
+        $disciplinas = Disciplina::find(request()->disciplinas);
+        $curso->disciplinas()->attach($disciplinas);
         $curso->update(request()->all());
 
-        return redirect()->route('cursos.index');
+        return redirect()->back();
     }
 
     public function destroy(Curso $curso)
     {
 
+        $curso->disciplinas()->sync([]);
         $curso->delete();
 
         return redirect()
             ->route('cursos.index')
             ->withSuccess("O Curso  foi removido");
+    }
+
+
+    public function removerDisciplina($curso_id, $disciplina_id)
+    {
+
+        $disciplinas = Disciplina::all();
+        $curso = Curso::find($curso_id);
+        $curso->disciplinas()->detach($disciplina_id);
+
+        return view('cursos.show')->with([
+            'curso' => $curso,
+            'disciplinas' => $disciplinas,
+        ]);
     }
 }

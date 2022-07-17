@@ -2,6 +2,9 @@
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.css') }}">
+
+    {{-- <link href="vendor/select2/dist/css/select2.min.css" rel="stylesheet" /> --}}
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 @stop
 
 @section('title')
@@ -37,13 +40,31 @@
                             required>
                     </div>
 
+                    <div class="form-group">
+                        {{-- <input type="hidden" name="curso" value="{{ $curso->id }}"> --}}
+                        <label>Disciplinas</label>
+                        <select name="disciplinas[]" class="select2" id="disciplinas" multiple=""
+                            data-placeholder="Selecione as Disciplinas" style="width: 100%;">
+                            @foreach ($disciplinas as $disciplina)
+                                <option value="{{ $disciplina->id }}">{{ $disciplina->nome }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary ">Registar</button>
                     </div>
-
-                   
-
                 </div>
+            </div>
         </form>
-    </div>
-@endsection
+    @endsection
+
+    @section('js')
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+        {{-- <script src="vendor/select2/dist/js/select2.min.js"></script> --}}
+        <script>
+            $('#disciplinas').select2({
+                multiple: true
+            });
+        </script>
+    @stop
