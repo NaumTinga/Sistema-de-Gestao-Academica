@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('turma', function (Blueprint $table) {
+        Schema::create('turmas', function (Blueprint $table) {
             $table->id();
             $table->integer('nrTotalEstudantes');
             $table->string('designacao');
-            $table->integer('curso_id');
+            $table->integer('curso_id')->nullable();
             $table->timestamps();
         });
     }

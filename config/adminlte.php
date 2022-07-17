@@ -272,7 +272,7 @@ return [
                 ],
                 [
                     'text'  => 'Associar Docente a Turmas',
-                    'url'  => 'views/docentes/create'
+                    'url'  => 'docentes/create'
                 ]
             ],
             'permission'  => [
@@ -290,7 +290,7 @@ return [
                 ],
                 [
                     'text'  => 'Registar Turma',
-                    'url'   => 'views/turmas/create'
+                    'url'   => 'turmas/create'
                 ],
             ],
         ],
