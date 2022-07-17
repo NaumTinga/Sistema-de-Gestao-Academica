@@ -27,13 +27,13 @@
             <div class="card-header">
             </div>
             <div class="container-fluid" style="padding: 20px;">
-                {{-- <div class="text-center">
+                <div class="text-center">
                     @if (Session::has('success'))
                         <div class="alert alert-success">
                             {{ session('success') }}
                         </div>
                     @endif
-                </div> --}}
+                </div>
 
                 <div class="row">
                     <div class="col-sm-12 col-md-12">
@@ -52,6 +52,7 @@
                                                 <th>Email</th>
                                                 <th>Telefone</th>
                                                 <th>Naturalidade</th>
+                                                <th>Turmas</th>
                                                 <th>Acção</th>
                                             </tr>
                                         </thead>
@@ -65,6 +66,7 @@
                                                     <td>{{ $docente->email }}</td>
                                                     <td>{{ $docente->nrTelefone }}</td>
                                                     <td>{{ $docente->naturalidade }}</td>
+                                                    <td>{{ $docente->turmas->designacao }}</td>
                                                     <td>
 
                                                         <a class="btn btn-primary"
@@ -82,6 +84,14 @@
                                                     </td>
                                                 </tr>
                                             @endforeach
+                                            @foreach ($docente->turmas as $turma)
+                                            <tr class="odd">
+                                                
+                                                <td class="dtr-control sorting_1" tabindex="0">
+                                                    {{ $turma->designacao }}</td>
+                                                
+                                            </tr>
+                                        @endforeach
 
                                         </tbody>
                                     </table>

@@ -27,5 +27,10 @@ class Docente extends Model
       'areaCientifica', 
       'categoria_Id'
    ];
+
+   public function turmas()
+    {
+        return $this->hasMany(Turma::class);
+    }
    
 }

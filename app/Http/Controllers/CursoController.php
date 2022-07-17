@@ -62,6 +62,7 @@ class CursoController extends Controller
 
         $curso = Curso::findOrFail($curso);
 
+        dd($curso);
         return view('cursos.show')->with([
             'curso' => $curso,
             'disciplinas' => $disciplinas,

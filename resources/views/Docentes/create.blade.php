@@ -28,12 +28,13 @@
 
 
         <form method="POST" action="{{ route('docentes.store') }}">
-            @csrf 
+            @csrf
             <div class="row">
                 <div class="card-body col-md-6">
                     <div class="form-group ">
                         <label>Nome *</label>
-                        <input type="text" name="nome" class="form-control" placeholder="Ex: Marlene Paulino" required>
+                        <input type="text" name="nome" class="form-control" placeholder="Ex: Marlene Paulino"
+                            required>
                     </div>
                     <div class="form-group ">
                         <label>Data de Nascimento *</label>
@@ -60,10 +61,6 @@
                             <option>Niassa</option>
                         </select>
                     </div>
-                </div>
-
-                <div class="card-body col-md-6">
-
                     <div class="form-group">
                         <label>Genero *</label>
                         <select name="genero" class="form-control select2bs4" style="width: 100%;" required>
@@ -71,14 +68,30 @@
                             <option>Femenino</option>
                         </select>
                     </div>
+                </div>
+
+                <div class="card-body col-md-6">
+
+
                     <div class="form-group">
                         <label>Grau Academico</label>
                         <select name="grauAcademico" class="form-control select2bs4" style="width: 100%;">
-                            <option selected="selected">Ensino Medio</option>
                             <option>Ensino Superior</option>
                             <option>Mestrado</option>
                             <option>Doutoramento</option>
                         </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Escalao</label>
+                        <select name="escalao" class="form-control select2bs4" style="width: 100%;">
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Nivel</label>
+                        <input type="number" name="nivel" class="form-control" placeholder="Ex: 1,2 ou 3" required>
                     </div>
                     <div class="form-group ">
                         <label>Telefone *</label>
@@ -86,8 +99,12 @@
                     </div>
                     <div class="form-group ">
                         <label for="exampleInputEmail1">Email *</label>
-                        <input type="email" name="email" class="form-control" placeholder="marlenepaulino@gmail.com" required>
+                        <input type="email" name="email" class="form-control" placeholder="marlenepaulino@gmail.com"
+                            required>
                     </div>
+
+                    
+
                 </div>
 
 

@@ -17,8 +17,11 @@ return new class extends Migration
             $table->id();
             $table->integer('nrTotalEstudantes');
             $table->string('designacao');
-            $table->integer('curso_id')->nullable();
+            $table->unsignedBigInteger('docente_id')->nullable();
             $table->timestamps();
+
+            $table->foreign('docente_id')->references('id')->on('docentes')->delete('cascade');
+
         });
     }
 

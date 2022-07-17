@@ -11,6 +11,11 @@ class Turma extends Model
     protected $fillable = [
         'nrTotalEstudantes',
         'designacao',
-        'curso_id',
+        'docente_id',
     ];
+
+    public function docente()
+    {
+        return $this->belongsTo(Docente::class);
+    }
 }
