@@ -41,7 +41,7 @@
                             <div class="card-header">
                                 <h3 class="card-title">Lista do Corpo de Docentes</h3>
                             </div>
-                        
+
                                 <div class="card-body  table-responsive">
                                     <table id="table" class="table table-striped">
                                         <thead>
@@ -66,7 +66,7 @@
                                                     <td>{{ $docente->email }}</td>
                                                     <td>{{ $docente->nrTelefone }}</td>
                                                     <td>{{ $docente->naturalidade }}</td>
-                                                    <td>{{ $docente->turmas->designacao }}</td>
+                                                    {{-- <td>{{ $docente->turmas->designacao }}</td> --}}
                                                     <td>
 
                                                         <a class="btn btn-primary"
@@ -86,17 +86,17 @@
                                             @endforeach
                                             @foreach ($docente->turmas as $turma)
                                             <tr class="odd">
-                                                
+
                                                 <td class="dtr-control sorting_1" tabindex="0">
                                                     {{ $turma->designacao }}</td>
-                                                
+
                                             </tr>
                                         @endforeach
 
                                         </tbody>
                                     </table>
                                 </div>
-                            
+
                         </div>
                     </div>
 

@@ -8,23 +8,23 @@ use Illuminate\Database\Eloquent\Model;
 class Docente extends Model
 {
    use HasFactory;
-   
+
    protected $fillable = [
-      'nome', 
-      'dataNascimento', 
+      'nome',
+      'dataNascimento',
       'morada',
-      'naturalidade', 
-      'genero', 
+      'naturalidade',
+      'genero',
       'grauAcademico',
-      'escalao', 
+      'escalao',
       'nivel',
-      'nrTelefone', 
+      'nrTelefone',
       'email',
-      'disciplina_Id', 
-      'curso_Id', 
-      'bloco_Id', 
-      'turma_Id', 
-      'areaCientifica', 
+      'disciplina_Id',
+      'curso_Id',
+      'bloco_Id',
+      'turma_Id',
+      'areaCientifica',
       'categoria_Id'
    ];
 
@@ -32,5 +32,5 @@ class Docente extends Model
     {
         return $this->hasMany(Turma::class);
     }
-   
+
 }

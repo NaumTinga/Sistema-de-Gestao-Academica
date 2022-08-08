@@ -306,10 +306,7 @@ return [
                     'text'  => 'Registar Curso',
                     'url'   => 'cursos/create'
                 ],
-                [
-                    'text'  => 'Associar Disciplinas a Cursos',
-                    'url'   => 'cursos/create'
-                ],
+
             ],
         ],
         [

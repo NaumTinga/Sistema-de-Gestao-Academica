@@ -101,7 +101,16 @@
                     </div>
                 </div>
 
+                <div class="form-group ">
+                    <label>Turmas</label>
+                    <select name="turmas" class="form-control select2bs4" id="turmas"
+                        data-placeholder="Selecione as turmas" style="width: 100%;"  >
+                        @foreach ($turmas as $turma)
+                            <option value="{{ $turma->id }}">{{ $turma->designacao }}</option>
+                        @endforeach
+                    </select>
 
+                </div>
 
                 <div class="card-footer">
                     <button type="submit" class="btn btn-primary">Actualizar</button>
