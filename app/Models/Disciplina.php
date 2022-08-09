@@ -10,13 +10,18 @@ class Disciplina extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nome', 
-        
+        'nome',
+
     ];
 
     public function cursos()
     {
         return $this->belongsToMany(Curso::class);
+    }
+
+    public function docentes()
+    {
+        return $this->belongsToMany(Docente::class);
     }
 
 }

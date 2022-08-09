@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Disciplina;
 use Illuminate\Http\Request;
 use App\Models\Docente;
 use App\Models\Turma;
@@ -29,10 +30,12 @@ class DocenteController extends Controller
         $docentes = Docente::all();
 
         $turmas = Turma::all();
+        $disciplinas = Disciplina::all();
         //dd($docentes);
         return view('docentes.index')->with([
             'docentes' => $docentes,
             'turmas' => $turmas,
+            'disciplinas' => $disciplinas,
         ]);
     }
 

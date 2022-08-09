@@ -32,5 +32,9 @@ class Docente extends Model
     {
         return $this->hasMany(Turma::class);
     }
+    public function disciplinas()
+    {
+        return $this->hasMany(Disciplina::class);
+    }
 
 }
