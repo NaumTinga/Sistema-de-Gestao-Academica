@@ -103,7 +103,15 @@
                             required>
                     </div>
 
-                    
+                    <div class="form-group">
+                        <label>Turma</label>
+                        <select name="turma" class="form-control select2bs4" style="width: 100%;">
+                            @foreach ($turmas as $turma)
+                                <option>{{ $turma->designacao }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
 
                 </div>
 

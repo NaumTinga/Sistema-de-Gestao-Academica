@@ -29,7 +29,6 @@ class DocenteController extends Controller
         $docentes = Docente::all();
 
         $turmas = Turma::all();
-        dd($docentes);
         return view('docentes.index')->with([
             'docentes' => $docentes,
             'turmas' => $turmas,
@@ -38,15 +37,20 @@ class DocenteController extends Controller
 
     public function create()
     {
-
-        return view('Docentes.create');
+        $turmas = Turma::all();
+        return view('Docentes.create')->with([
+            'turmas' => $turmas,
+        ]);
     }
 
     public function store()
     {
 
-
         $docente = Docente::create(request()->all());
+        $turmas = Turma::find(request()->disciplinas);
+        $docente->turmas()->attach($turmas);
+       // $turmas->$docente->turmas()->save($turmas);
+        dd($docente,$turmas);
 
         return redirect()->route('docentes.index')
             ->withSuccess("O Docente {$docente->nome} foi registado");

@@ -30,7 +30,7 @@ class Docente extends Model
 
    public function turmas()
     {
-        return $this->hasMany(Turma::class);
+        return $this->hasMany(Turma::class, 'turma_id');
     }
    
 }

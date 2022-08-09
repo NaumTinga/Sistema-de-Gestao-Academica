@@ -12,7 +12,7 @@
 @section('content_header')
     <div class="row mb-2">
         <div class="col-sm-6">
-            <h1 class="m-0 text-dark"> Dados do Curso</h1>
+            <h1 class="m-0 text-dark"> Dados do Curso de {{ $curso->nome }}</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -26,7 +26,7 @@
 @section('content')
     <div class="row card card-primary">
         <div class="card-header">
-            <h3 class="card-title">Dados do Curso</h3>
+            <h3 class="card-title">Dados do Curso de {{ $curso->nome }} </h3>
         </div>
 
 
@@ -61,7 +61,7 @@
                     
                     <div class="card  form-group col-md-12">
                         <div class="card-header">
-                            <h1 class="card-title">Disciplinas do Curso</h1>
+                            <h1 class="card-title">Disciplinas do Curso de {{ $curso->nome }}</h1>
                         </div>
 
                         <div class="card-body">

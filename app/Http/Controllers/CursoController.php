@@ -61,8 +61,6 @@ class CursoController extends Controller
         $disciplinas = Disciplina::all();
 
         $curso = Curso::findOrFail($curso);
-
-        dd($curso);
         return view('cursos.show')->with([
             'curso' => $curso,
             'disciplinas' => $disciplinas,
