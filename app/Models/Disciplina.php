@@ -24,4 +24,9 @@ class Disciplina extends Model
         return $this->belongsToMany(Docente::class);
     }
 
+    public function adendas()
+    {
+        return $this->belongsToMany(Adenda::class);
+    }
+
 }

@@ -262,6 +262,10 @@ return [
                     'text' => 'Lista de Adendas',
                     'url' => 'adendas'
                 ],
+                [
+                    'text' => 'Gerar Adenda',
+                    'url' => 'adendas/create'
+                ],
             ],
         ],
         [

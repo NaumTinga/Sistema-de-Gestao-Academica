@@ -17,4 +17,9 @@ class Curso extends Model
     {
         return $this->belongsToMany(Disciplina::class);
     }
+
+    public function adendas()
+    {
+        return $this->belongsToMany(Adenda::class);
+    }
 }

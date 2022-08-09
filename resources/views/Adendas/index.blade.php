@@ -47,9 +47,10 @@
                                         <thead>
                                             <tr>
                                                 <th>Docente</th>
+                                                <th>Turma</th>
                                                 <th>Regime</th>
                                                 <th>Curso</th>
-                                                <th>Cadeiras</th>
+                                                <th>Disciplina</th>
                                                 <th>Semestre</th>
                                                 <th>Observacao</th>
                                                 <th>DataAlteracao</th>
@@ -60,12 +61,14 @@
 
                                             @foreach ($adendas as $adenda)
                                                 <tr>
-                                                    <td>{{ $adenda->nome }}</td>
-                                                    <td>{{ $adenda->genero }}</td>
-                                                    <td>{{ $adenda->grauAcademico }}</td>
-                                                    <td>{{ $adenda->email }}</td>
-                                                    <td>{{ $adenda->nrTelefone }}</td>
-                                                    <td>{{ $adenda->naturalidade }}</td>
+                                                    <td>{{ $adenda->docentes->first()->nome ?? "------" }}</td>
+                                                    <td>{{ $adenda->turmas->first()->designacao ?? "------" }}</td>
+                                                    <td>{{ $adenda->regime }}</td>
+                                                    <td>{{ $adenda->cursos->first()->nome ?? "------"  }}</td>
+                                                    <td>{{ $adenda->disciplinas->first()->nome ?? "------"  }}</td>
+                                                    <td>{{ $adenda->semestre }}</td>
+                                                    <td>{{ $adenda->observacao }}</td>
+                                                    <td>{{ $adenda->dataAlteracao }}</td>
                                                     {{-- <td>{{ $adenda->turmas->designacao }}</td> --}}
                                                     <td>
 
@@ -84,15 +87,6 @@
                                                     </td>
                                                 </tr>
                                             @endforeach
-                                            @foreach ($adenda->turmas as $turma)
-                                            <tr class="odd">
-
-                                                <td class="dtr-control sorting_1" tabindex="0">
-                                                    {{ $turma->designacao }}</td>
-
-                                            </tr>
-                                        @endforeach
-
                                         </tbody>
                                     </table>
                                 </div>

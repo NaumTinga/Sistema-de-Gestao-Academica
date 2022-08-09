@@ -18,4 +18,9 @@ class Turma extends Model
     {
         return $this->belongsTo(Docente::class, 'docente_id');
     }
+
+    public function adendas()
+    {
+        return $this->belongsToMany(Adenda::class);
+    }
 }

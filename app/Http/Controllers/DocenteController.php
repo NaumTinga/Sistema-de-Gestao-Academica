@@ -54,11 +54,11 @@ class DocenteController extends Controller
         $docente = Docente::create(request()->all());
         //var_dump($docente);
         //var_dump($turmas);
-        dd($docente);
-        foreach ($turmas as $turma) {
-            $turma->docente_id = $docente->id;
-            $turma->save();
-        }
+
+        // foreach ($turmas as $turma) {
+        //     $turma->docente_id = $docente->id;
+        //     $turma->save();
+        // }
 
         return redirect()->route('docentes.index')
             ->withSuccess("O Docente {$docente->nome} foi registado");

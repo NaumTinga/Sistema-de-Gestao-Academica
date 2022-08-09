@@ -66,7 +66,7 @@
                                                 <td>{{ $docente->email }}</td>
                                                 <td>{{ $docente->nrTelefone }}</td>
                                                 <td>{{ $docente->naturalidade }}</td>
-                                                <td>{{ $docente->disciplina->nome }}</td>
+                                                {{-- <td>{{ $docente->disciplina->nome }}</td> --}}
                                                 <td>
 
                                                     <a class="btn btn-primary"
@@ -82,15 +82,17 @@
                                                         </button>
                                                     </form>
                                                 </td>
-                                        @endforeach
-                                        @foreach ($docente->turmas as $turma)
-                                            <tr class="odd">
+                                                @endforeach
 
-                                                <td class="dtr-control sorting_1" tabindex="0">
-                                                    {{ $turma->designacao }}</td>
+                                                 {{-- @foreach ($docente->turmas as $turma)
+                                                <tr class="odd">
 
-                                            </tr>
-                                        @endforeach
+                                                 <td class="dtr-control sorting_1" tabindex="0">
+                                                        {{ $turma->designacao }}</td>
+
+                                                </tr>
+                                                @endforeach --}}
+
                                         </tr>
 
 

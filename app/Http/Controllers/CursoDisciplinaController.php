@@ -29,8 +29,6 @@ class CursoDisciplinaController extends Controller
         $curso = Curso::find($request->curso);
         $disciplinas = Disciplina::find($request->disciplinas);
         //dd($request->all(),$curso,$disciplinas); //debug para ver se estamos a receber o curso
-
-
         $curso->disciplinas()->attach($disciplinas);
 
         return redirect()->back();

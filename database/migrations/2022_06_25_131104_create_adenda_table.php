@@ -13,14 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('adenda', function (Blueprint $table) {
+        Schema::create('adendas', function (Blueprint $table) {
             $table->id();
             $table->string('observacao');
             $table->string('regime');
             $table->string('turno');
             $table->string('semestre');
-            $table->string('docente_id');
-            $table->string('funcionario_id');
+            $table->string('disciplina_id')->nullable();
+            $table->string('curso_id')->nullable();
+            $table->string('turma_id')->nullable();
+            $table->string('docente_id')->nullable();
+            $table->string('funcionario_id')->nullable();
             $table->date('dataAlteracao');
             $table->timestamps();
         });
@@ -33,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('adenda');
+        Schema::dropIfExists('adendas');
     }
 };

@@ -18,15 +18,19 @@
                 <li class="breadcrumb-item"><a href="/docentes">Inicio</a></li>
                 <li class="breadcrumb-item active">Docente</li>
             </ol>
-        </div><!-- /.col -->
+        </div><!-- /.col --> 
     </div><!-- /.row -->
+   
 @stop
 
 @section('content')
     <div class="row card card-primary">
         <div class="card-header">
             <h3 class="card-title">Dados do Docente</h3>
+
         </div>
+       
+       
 
 
         <form method="POST" action="{{ route('docentes.update', ['docente' => $docente->id]) }}">
@@ -122,7 +126,7 @@
 
     <div class="row card card-primary">
         <div class="card-header">
-            <h3 class="card-title">Associar Docente a Turma</h3>
+            <h3 class="card-title">Associar Docente a Turmas e Disciplinas</h3>
         </div>
 
 

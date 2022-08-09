@@ -36,5 +36,8 @@ class Docente extends Model
     {
         return $this->hasMany(Disciplina::class);
     }
-
+    public function adendas()
+    {
+        return $this->belongsToMany(Adenda::class);
+    }
 }
