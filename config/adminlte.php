@@ -257,6 +257,12 @@ return [
         [
             'text' => 'Adenda',
             'url'  => 'admin/blog',
+            'submenu' => [
+                [
+                    'text' => 'Lista de Adendas',
+                    'url' => 'adendas'
+                ],
+            ],
         ],
         [
             'text'    => 'Docentes',
@@ -305,10 +311,6 @@ return [
                 [
                     'text'  => 'Registar Curso',
                     'url'   => 'cursos/create'
-                ],
-                [
-                    'text'  => 'Associar Disciplinas a Cursos',
-                    'url'   => '#'
                 ],
             ],
         ],

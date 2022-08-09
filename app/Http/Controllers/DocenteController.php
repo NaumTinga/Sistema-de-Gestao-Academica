@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Disciplina;
 use Illuminate\Http\Request;
 use App\Models\Docente;
 use App\Models\Turma;
@@ -23,15 +24,18 @@ class DocenteController extends Controller
     public function index()
     {
 
-        // return view('docentes.index',[ 
+        // return view('docentes.index',[
         //     'docentes' => DB::table('docentes')->paginate(5),
         //  ]);
         $docentes = Docente::all();
 
         $turmas = Turma::all();
+        $disciplinas = Disciplina::all();
+        //dd($docentes);
         return view('docentes.index')->with([
             'docentes' => $docentes,
             'turmas' => $turmas,
+            'disciplinas' => $disciplinas,
         ]);
     }
 
@@ -46,11 +50,15 @@ class DocenteController extends Controller
     public function store()
     {
 
+        $turmas = Turma::all()->find(request()->turmas);
         $docente = Docente::create(request()->all());
-        $turmas = Turma::find(request()->disciplinas);
-        $docente->turmas()->attach($turmas);
-       // $turmas->$docente->turmas()->save($turmas);
-        dd($docente,$turmas);
+        //var_dump($docente);
+        //var_dump($turmas);
+        dd($docente);
+        foreach ($turmas as $turma) {
+            $turma->docente_id = $docente->id;
+            $turma->save();
+        }
 
         return redirect()->route('docentes.index')
             ->withSuccess("O Docente {$docente->nome} foi registado");
@@ -96,6 +104,14 @@ class DocenteController extends Controller
             ->withSuccess("O Docente  foi removido");
     }
 
+
+    public function docenteTurma(){
+        $docente = Docente::all();
+
+        return view('Docentes.docenteTurma')->with([
+            'docentes' => $docente,
+        ]);
+    }
 
     public function AssociarDocenteTurma($docente_id)
     {

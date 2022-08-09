@@ -26,12 +26,13 @@ Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 
 // Docente
 Route::resource('docentes', 'App\Http\Controllers\DocenteController');
+//Route::get('docentes', 'App\Http\Controllers\DocenteController@docenteTurma')->name('docente.docenteTurma');
+Route::post('docentes/{$docente}', [DocenteController::class, 'AssociarDocenteTurma'])->name('docente.AssociarDocenteTurma');
 
 // Funcionario
 
 // Discplina
 Route::resource('disciplinas', 'App\Http\Controllers\DisciplinaController');
-Route::post('docentes/{$docente}', [CursoController::class, 'AssociarDocenteTurma'])->name('docente.AssociarDocenteTurma');
 // Curso
 Route::resource('cursos', 'App\Http\Controllers\CursoController');
 Route::get('cursos/{curso}/{disciplina}',[CursoController::class, 'removerDisciplina'])->name('curso.removerDisciplina');
@@ -41,10 +42,10 @@ Route::resource('adendas', 'App\Http\Controllers\AdendaController');
 Route::resource('categorias', 'App\Http\Controllers\CategoriaController');
 // Bloco
 Route::resource('blocos', 'App\Http\Controllers\BlocoController');
-// Turma 
+// Turma
 Route::resource('turmas', 'App\Http\Controllers\TurmaController');
-// Role 
+// Role
 Route::resource('roles', 'App\Http\Controllers\RoleController');
 
 Route::post('cursoDisciplina', 'App\Http\Controllers\CursoDisciplinaController@store')->name('cursoDisciplina.store');
-  
+

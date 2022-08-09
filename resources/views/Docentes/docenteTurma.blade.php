@@ -28,7 +28,7 @@
         </div>
 
 
-        <form method="POST" action="{{ route('docente.AssociarDocenteTurma', ['docente' => $docente->id]) }}">
+        <form method="POST" action="{{ route('docentes.AssociarDocenteTurma', ['docente' => $docente->id]) }}">
             @csrf
             @method('PUT')
             <div class="row">
@@ -44,7 +44,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Disciplinas</label>
+                    <label>Turmas</label>
                     <select name="turmas[]" class="select2" id="turmas" multiple=""
                         data-placeholder="Selecione as Turmas" style="width: 100%;">
                         @foreach ($turmas as $turma)

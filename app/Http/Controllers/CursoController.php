@@ -26,7 +26,7 @@ class CursoController extends Controller
 
         $cursos = Curso::all();
 
-        //  return view('cursos.index',[ 
+        //  return view('cursos.index',[
         //     'cursos' => DB::table('cursos')->paginate(20),
         //  ]);
         return view('cursos.index')->with([
@@ -61,6 +61,8 @@ class CursoController extends Controller
         $disciplinas = Disciplina::all();
 
         $curso = Curso::findOrFail($curso);
+
+        //dd($curso);
         return view('cursos.show')->with([
             'curso' => $curso,
             'disciplinas' => $disciplinas,
