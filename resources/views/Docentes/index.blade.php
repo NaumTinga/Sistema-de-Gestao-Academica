@@ -2,6 +2,9 @@
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css" />
 @stop
 
 @section('title')
@@ -43,7 +46,8 @@
                             </div>
 
                             <div class="card-body  table-responsive">
-                                <table id="table" class="table table-striped">
+                                <table id="table" class="table table-bordered table-striped dataTable dtr-inline"
+                                aria-describedby="example1_info">
                                     <thead>
                                         <tr>
                                             <th>Nome</th>
@@ -52,7 +56,6 @@
                                             <th>Email</th>
                                             <th>Telefone</th>
                                             <th>Naturalidade</th>
-                                            <th>Disciplina</th>
                                             <th>Acção</th>
                                         </tr>
                                     </thead>
@@ -82,9 +85,9 @@
                                                         </button>
                                                     </form>
                                                 </td>
-                                                @endforeach
+                                        @endforeach
 
-                                                 {{-- @foreach ($docente->turmas as $turma)
+                                        {{-- @foreach ($docente->turmas as $turma)
                                                 <tr class="odd">
 
                                                  <td class="dtr-control sorting_1" tabindex="0">
@@ -107,4 +110,73 @@
             </div>
             <!-- /.row -->
 
+        @stop
+
+        @section('js')
+
+
+            {{-- <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js"></script> --}}
+
+            <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+            <script type="text/javascript"
+                src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.12.1/b-2.2.3/b-colvis-2.2.3/b-html5-2.2.3/b-print-2.2.3/datatables.min.js">
+            </script>
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $('#table').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: [
+
+                            {
+                                extend: 'excelHtml5',
+                                filename: 'LCD',
+                                title: 'Universidade Apolitecnica - Lista de Corpos de Docentes',
+                                text: 'Exportar para Excel',
+                            },
+                            {
+                                extend: 'pdfHtml5',
+                                filename: 'LCD',
+                                title: 'Universidade Apolitecnica - Lista de Corpos de Docentes',
+                                text: 'Exportar para PDF',
+                            },
+                            {
+                                extend: 'print',
+                                filename: 'LCD',
+                                title: 'Universidade Apolitecnica - Lista de Corpos de Docentes',
+                                text: 'Imprimir'
+                            }
+
+                        ]
+                    })
+                });
+            </script>
+
+            {{-- <script>
+        $(document).ready(function() {
+            $("#example1").DataTable({
+                responsive: true,
+                lengthChange: false,
+                autoWidth: false,
+                dom: 'Bfrtip',
+                buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
+                filename: "ADENDA",
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
+        });
+    </script> --}}
         @stop

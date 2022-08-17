@@ -76,18 +76,14 @@
                     <div class="form-group">
                         <label>Grau Academico</label>
                         <select name="grauAcademico" class="form-control select2bs4" style="width: 100%;">
-                            <option>Ensino Superior</option>
-                            <option>Mestrado</option>
-                            <option>Doutoramento</option>
+                            <option>Lic</option>
+                            <option>Mestre</option>
+                            <option>Ph.D</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Escalao</label>
-                        <select name="escalao" class="form-control select2bs4" style="width: 100%;">
-                            <option>A</option>
-                            <option>B</option>
-                            <option>C</option>
-                        </select>
+                        <input type="number" name="escalao" class="form-control" placeholder="Ex: 1,2 ou 3" required>
                     </div>
                     <div class="form-group">
                         <label>Nivel</label>

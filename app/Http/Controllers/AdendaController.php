@@ -32,6 +32,7 @@ class AdendaController extends Controller
         $disciplinas = Disciplina::all();
         $turmas = Turma::all();
         $adendas = Adenda::all();
+        
 
         return view('adendas.index')->with([
             'adendas' => $adendas,
@@ -80,10 +81,18 @@ class AdendaController extends Controller
     public function show($adenda)
     {
 
-        $adenda = Adenda::findOrFail($adenda);
+        $docentes = Docente::all();
+        $cursos = Curso::all();
+        $disciplinas = Disciplina::all();
+        $turmas = Turma::all();
+        $adendas = Adenda::findOrFail($adenda);
 
         return view('adendas.show')->with([
-            'adenda' => $adenda,
+            'adendas' => $adendas,
+            'docentes' => $docentes,
+            'cursos' => $cursos,
+            'disciplinas' => $disciplinas,
+            'turmas' => $turmas,
         ]);
     }
 

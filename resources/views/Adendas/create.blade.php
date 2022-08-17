@@ -31,8 +31,8 @@
                 <div class="card-body col-md-6"> {{-- lado esquerdo do form --}}
                     <div class="form-group ">
                         <label>Docente *</label>
-                        <select name="docentes" class="form-control select2bs4" 
-                            data-placeholder="Selecione o docente" style="width: 100%;">
+                        <select name="docentes" class="form-control select2bs4" data-placeholder="Selecione o docente"
+                            style="width: 100%;">
                             @foreach ($docentes as $docente)
                                 <option value="{{ $docente->id }}">{{ $docente->nome }}</option>
                             @endforeach
@@ -41,8 +41,8 @@
 
                     <div class="form-group ">
                         <label>Curso *</label>
-                        <select name="cursos" class="form-control select2bs4" 
-                            data-placeholder="Selecione o curso" style="width: 100%;">
+                        <select name="cursos" class="form-control select2bs4" data-placeholder="Selecione o curso"
+                            style="width: 100%;">
                             @foreach ($cursos as $curso)
                                 <option value="{{ $curso->id }}">{{ $curso->nome }}</option>
                             @endforeach
@@ -66,18 +66,25 @@
                 <div class="card-body col-md-6"> {{-- lado direito do form --}}
 
                     <div class="form-group ">
+
                         <label>Disciplina *</label>
-                        <select name="disciplinas" class="form-control select2bs4"
-                            data-placeholder="Selecione a disciplina" style="width: 100%;">
-                            @foreach ($disciplinas as $disciplina)
-                                <option value="{{ $disciplina->id }}">{{ $disciplina->nome }}</option>
+                        <select name="disciplinas" class="form-control select2bs4" data-placeholder="Selecione a disciplina"
+                            style="width: 100%;">
+                            @php
+                                $cursos = \App\Models\Curso::all();
+                            @endphp
+                            @foreach ($cursos as $curso)
+                                @foreach ($curso->disciplinas as $disciplina)
+                                    <option value="{{ $disciplina->id }}">{{ $disciplina->nome }}</option>
+                                @endforeach
                             @endforeach
+
                         </select>
                     </div>
                     <div class="form-group ">
                         <label>Turma *</label>
-                        <select name="turmas" class="form-control select2bs4" 
-                            data-placeholder="Selecione as turma" style="width: 100%;">
+                        <select name="turmas" class="form-control select2bs4" data-placeholder="Selecione as turma"
+                            style="width: 100%;">
                             @foreach ($turmas as $turma)
                                 <option value="{{ $turma->id }}">{{ $turma->designacao }}</option>
                             @endforeach
@@ -92,14 +99,13 @@
                     </div>
                     <div class="form-group ">
                         <label>Obeservação *</label>
-                        <input type="text" name="observacao" class="form-control" 
-                            required>
+                        <input type="text" name="observacao" class="form-control" required>
                     </div>
                 </div>{{-- fim lado direito do form --}}
                 <div class="card-footer">
                     <button type="submit" class="btn btn-primary">Gerar</button>
                 </div>
-
+            </div>
         </form>
     </div>
 @endsection
