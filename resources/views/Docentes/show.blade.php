@@ -105,7 +105,7 @@
                     </div>
                 </div>
 
-                <div class="form-group ">
+                {{-- <div class="form-group ">
                     <label>Turmas</label>
                     <select name="turmas" class="form-control select2bs4" id="turmas"
                         data-placeholder="Selecione as turmas" style="width: 100%;"  >
@@ -114,7 +114,7 @@
                         @endforeach
                     </select>
 
-                </div>
+                </div> --}}
 
                 <div class="card-footer">
                     <button type="submit" class="btn btn-primary">Actualizar</button>
@@ -124,7 +124,7 @@
         </form>
     </div>
 
-    <div class="row card card-primary">
+    {{-- <div class="row card card-primary">
         <div class="card-header">
             <h3 class="card-title">Associar Docente a Turmas e Disciplinas</h3>
         </div>
@@ -150,7 +150,7 @@
                 </div>
 
             </div>
-        </form>
+        </form> --}}
     </div>
 @endsection
 

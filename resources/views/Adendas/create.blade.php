@@ -70,14 +70,11 @@
                         <label>Disciplina *</label>
                         <select name="disciplinas" class="form-control select2bs4" data-placeholder="Selecione a disciplina"
                             style="width: 100%;">
-                            @php
-                                $cursos = \App\Models\Curso::all();
-                            @endphp
-                            @foreach ($cursos as $curso)
-                                @foreach ($curso->disciplinas as $disciplina)
+                        
+                                @foreach ($disciplinas as $disciplina)
                                     <option value="{{ $disciplina->id }}">{{ $disciplina->nome }}</option>
                                 @endforeach
-                            @endforeach
+                      
 
                         </select>
                     </div>

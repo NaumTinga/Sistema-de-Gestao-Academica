@@ -280,10 +280,7 @@ return [
                     'text'  => 'Registar Docente',
                     'url'   => 'docentes/create'
                 ],
-                [
-                    'text'  => 'Associar Docente a Turmas',
-                    'url'  => 'docentes/docenteTurma'
-                ]
+               
             ],
             'permission'  => [
                 'create-ei',
